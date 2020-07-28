@@ -12,9 +12,14 @@
     justify-content: space-between;
     align-items: center;
 
+    & div {
+        display: flex;
+        justify-content: center;
+    }
+
     & .input {
         border: 1px solid transparent;
-        font-family: 'Noto Sans', sans-serif;
+        font-family: 'Google Sans', 'Noto Sans', sans-serif;
         border-radius: 3px;
         color: black;
         font-size: 18px;
@@ -35,8 +40,8 @@
 
     }
 
-    & .button {
-        @include button(red);
+    & .button_advanced {
+        @include button_advanced();
     }
 
     // background: #1a73e8;

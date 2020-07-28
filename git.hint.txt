@@ -1,2 +1,6 @@
 git add .
-git commit -m 
+git commit -m "**MESSAGE**"
+git push -u origin **GIT-NAME**
+
+После сайта
+git pull origin master

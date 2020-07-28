@@ -24,6 +24,38 @@
     }
 }
 
+@mixin button_advanced($color: #188038) {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-family: "Google Sans", Roboto, sans-serif;
+    font-size: 13px;
+    height: 36px;
+    letter-spacing: 0.25px;
+    background: $color;
+    color: #fff;
+    padding: 5px 16px 5px 12px;
+    margin-right: 5px;
+    user-select: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & span {
+        font-size: 18px;
+        margin-right: 5px;
+    }
+    
+    &:hover {
+        background: transparentize($color, 0.2);
+        cursor: pointer;
+    }
+
+    &:active, &.active {
+        background: transparentize($color, 0.3)
+    }
+}
+
 @mixin clear-list() {
     list-style: none;
     margin: 0;

@@ -8,11 +8,11 @@ export class Header extends ExcelComponent {
 			<input type="text" class="input" value="Новая таблица">
 
 			<div>
-				<div class="button">
-					<span class="material-icons">delete</span>
+				<div class="button_advanced">
+					<span class="material-icons">delete</span>Удалить
 				</div>
-				<div class="button">
-					<span class="material-icons">exit_to_app</span>
+				<div class="button_advanced">
+					<span class="material-icons">exit_to_app</span>Выйти
 				</div>
 			</div>
 		`

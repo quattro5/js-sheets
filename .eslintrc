@@ -9,11 +9,12 @@
         "semi": "off",
         "linebreak-style": 0,
         "indent": ["error", "tab"],
-        "comma-dangle": ["error", "never"],
-        "max-len": ["error", { "code": 100 }],
+        "comma-dangle": "off",
         "no-tabs": ["error", { "allowIndentationTabs": true }],
         "object-curly-spacing": "off",
-        "require-jsdoc":"off"
+        "require-jsdoc":"off",
+        "arrow-parens":"off",
+        "operator-linebreak":"off"
     },
     "extends": [
         "eslint:recommended", "google"

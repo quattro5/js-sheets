@@ -2,5 +2,6 @@ git add .
 git commit -m "**MESSAGE**"
 git push -u origin **GIT-NAME**
 
-После сайта
+после pull request на github
+
 git pull origin master

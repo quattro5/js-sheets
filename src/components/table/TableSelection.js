@@ -16,9 +16,23 @@ export class TableSelection {
 		this.current = $el
 	}
 
+	selectCtrl($el) {
+		if ($el.classList.contains('selected')) {
+			$el.classList.remove('selected')
+			this.group.pop($($el))
+		} else {
+			$el.classList.add('selected')
+			this.group.push($($el))
+		}
+	}
+
 	clear() {
 		this.group.forEach($el => $el.removeClass(TableSelection.className))
 		this.group = []
+	}
+
+	get selectedIds() {
+		return this.group.map($el => $el.id())
 	}
 
 	selectGroup($start, $end) {
@@ -40,5 +54,9 @@ export class TableSelection {
 			$el.addClass(TableSelection.className)
 			this.group.push($el)
 		})
+	}
+
+	applyStyle(style) {
+		this.group.forEach($el => $el.css(style))
 	}
 }

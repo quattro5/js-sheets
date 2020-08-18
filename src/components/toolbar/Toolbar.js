@@ -1,5 +1,5 @@
 import { ExcelStateComponent } from '@core/ExcelStateComponent'
-import { createToolbar } from './toolbar.template'
+import { createToolbar, colorPicker } from './toolbar.template'
 import { defaultStyles } from '@/constants'
 import { $ } from '@core/dom'
 
@@ -19,8 +19,9 @@ export class Toolbar extends ExcelStateComponent {
 		this.initState(defaultStyles)
 	}
 
+	// eslint-disable-next-line getter-return
 	get template() {
-		return createToolbar(this.state)
+		return createToolbar(this.state) + colorPicker('color_pick', '#ffffff')
 	}
 
 	toHTML() {
@@ -36,12 +37,15 @@ export class Toolbar extends ExcelStateComponent {
 
 	onClick(event) {
 		const $target = $(event.target)
-		if ($target.data.type === 'button') {
-			const value = JSON.parse($target.data.value)
-			this.$emit('toolbar:applyStyle', value)
+		const buttonTypes = ['button', 'buttonColor']
 
-			// const key = Object.keys(value)[0]
-			// this.setState({ [key]: value[key] })
+		if (buttonTypes.includes($target.data.type)) {
+			const value = JSON.parse($target.data.value)
+			if ($target.data.type === 'buttonColor') {
+				const key = Object.keys(value)[0]
+				value[key] = document.querySelector('.color_pick').value
+			}
+			this.$emit('toolbar:applyStyle', value)
 		}
 	}
 }

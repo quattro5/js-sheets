@@ -51,6 +51,7 @@
     "dependencies": {
         "@babel/polyfill": "^7.10.4",
         "eslint-plugin-jest": "^23.8.2",
+        "hot-formula-parser": "^3.0.2",
         "normalize.css": "^8.0.1"
     }
 }

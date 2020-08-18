@@ -34,7 +34,9 @@ export class Table extends ExcelComponent {
 		this.selectCell($cell)
 
 		this.$on('formula:input', text => {
-			this.selection.current.attr('data-value', text).text(parse(text))
+			this.selection.current.attr('data-value', text)
+			console.log(this.selection.current.data.value)
+			this.selection.current.$el.textContent = parse(text)
 			this.updateTextInStore(text)
 		})
 

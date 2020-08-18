@@ -1,7 +1,7 @@
 import { ExcelStateComponent } from '@core/ExcelStateComponent'
 import { changeTitle } from '@/redux/actions'
 import { $ } from '@core/dom'
-import { debounce } from '../../core/utils'
+import { debounce } from '@core/utils'
 
 export class Header extends ExcelStateComponent {
 	static className = 'excel__header'

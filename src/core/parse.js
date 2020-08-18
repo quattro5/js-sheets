@@ -1,7 +1,10 @@
+const FormulaParser = require('hot-formula-parser').Parser
+const parser = new FormulaParser()
+
 export function parse(value = '') {
 	if (value.startsWith('=')) {
 		try {
-			return eval(value.slice(1))
+			return parser.parse(value.slice(1)).result
 		} catch (e) {
 			return value
 		}

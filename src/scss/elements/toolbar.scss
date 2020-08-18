@@ -15,4 +15,18 @@
     .button {
         @include button(green);
     }
+
+    .color_pick {
+        border: none;
+        height: 28px;
+        width: 50px;
+        border-radius: 3px;
+        color: rgba(0, 0, 0, .7);
+        background: #fff;
+        
+        &:hover {
+            background: #eee;
+            cursor: pointer;
+        }
+    }
 }
